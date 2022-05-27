@@ -78,9 +78,6 @@ public class CameraControl : MonoBehaviour
                 isItDoubleClick = false;
             }
             
-            
-
-            
         }
         
 
