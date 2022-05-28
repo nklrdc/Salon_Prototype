@@ -23,9 +23,10 @@ public class CameraControl : MonoBehaviour
     private bool isItZoomedIn = false;
     private bool isItZoomedOut = true;
 
-    
+    public Transform CameraHolder;
+    public GameObject Model;
 
-    
+    Vector3 resetRotation;
 
     Camera _cam;
     // Start is called before the first frame update
@@ -34,7 +35,7 @@ public class CameraControl : MonoBehaviour
         _originalPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         _cam = Camera.main;
 
-        
+        resetRotation = new Vector3(_cam.transform.eulerAngles.x, _cam.transform.eulerAngles.y, _cam.transform.eulerAngles.z);
     }
 
     // Update is called once per frame
@@ -43,7 +44,8 @@ public class CameraControl : MonoBehaviour
         DoubleClickDetection();
 
         CameraZoom();
-       
+        CameraRotation();
+        
        
     }
     private void DoubleClickDetection()
@@ -82,10 +84,12 @@ public class CameraControl : MonoBehaviour
         {
             _cam.transform.position = Vector3.Lerp(transform.position, _originalPosition, lerpSpeed * Time.deltaTime);
             isItZoomedOut = false;
+            _cam.transform.eulerAngles = resetRotation;
 
             if (Vector3.Distance(_cam.transform.position, _originalPosition) < 0.05f)
             {
                 _cam.transform.position = _originalPosition;
+                
                 isItZoomedOut = true;
                 isItDoubleClick = false;
             }
@@ -93,6 +97,22 @@ public class CameraControl : MonoBehaviour
         }
 
     }   
+    void CameraRotation()
+    {
+        Vector3 mousePos = _cam.ScreenToViewportPoint(Input.mousePosition);
+        if(Input.GetMouseButton(0))
+        {
+            if(mousePos.x < 0.3f && isItZoomedIn && _cam.transform.position.x > - 0.45f)
+            {
+                _cam.transform.RotateAround(Model.transform.position, Vector3.up, 20 * Time.deltaTime);
+            }
+            else if(mousePos.x > 0.6f && isItZoomedIn && _cam.transform.position.x < 0.45f)
+            {
+                _cam.transform.RotateAround(Model.transform.position, Vector3.up, -20 * Time.deltaTime);
+            }
+        }
+       
+    }
     
 
 }
