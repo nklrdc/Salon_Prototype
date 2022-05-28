@@ -9,9 +9,12 @@ public class CameraControl : MonoBehaviour
     [SerializeField]
     private float zoomDistance = 3f;
     [SerializeField]
-    private float lerpSpeed = 1.3f;
+    private float zoomInSpeed = 1.3f;
+    [SerializeField]
+    private float zoomOutSpeed = 1.5f;
 
     private Vector3 _originalPosition;
+    private Vector3 _destinationPosition;
 
     private const float _doubleClick = 0.2f;
 
@@ -23,7 +26,7 @@ public class CameraControl : MonoBehaviour
     private bool isItZoomedIn = false;
     private bool isItZoomedOut = true;
 
-    public Transform CameraHolder;
+    
     public GameObject Model;
 
     Vector3 resetRotation;
@@ -33,9 +36,12 @@ public class CameraControl : MonoBehaviour
     void Start()
     {
         _originalPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+        _destinationPosition = new Vector3(transform.position.x, transform.position.y, -3.5f);
+
         _cam = Camera.main;
 
         resetRotation = new Vector3(_cam.transform.eulerAngles.x, _cam.transform.eulerAngles.y, _cam.transform.eulerAngles.z);
+        
     }
 
     // Update is called once per frame
@@ -48,6 +54,8 @@ public class CameraControl : MonoBehaviour
         
        
     }
+
+    //Double click detection for zooming in or out
     private void DoubleClickDetection()
     {
 
@@ -67,51 +75,73 @@ public class CameraControl : MonoBehaviour
     }
     private void CameraZoom()
     {
+
         Vector3 cameraZoomDistance = new Vector3(transform.position.x, transform.position.y, transform.position.z + zoomDistance);
+        Vector3 cameraZoomOutDistance = new Vector3(transform.position.x, transform.position.y, transform.position.z - zoomDistance);
 
-        if (isItDoubleClick && _cam.transform.localPosition.z < -0.7f && isItZoomedOut)
+        if (isItDoubleClick && _cam.transform.position.z < -3.5f && isItZoomedOut)
         {
-            _cam.transform.position = Vector3.Lerp(transform.position, cameraZoomDistance, lerpSpeed * Time.deltaTime);
+            _cam.transform.position = Vector3.Lerp(transform.position, cameraZoomDistance, zoomInSpeed * Time.deltaTime);
 
-            if (_cam.transform.localPosition.z >= -0.7f)
+            if (Vector3.Distance(_cam.transform.position, _destinationPosition) < 0.1f)
             {
+                _cam.transform.position = _destinationPosition;
+
                 isItDoubleClick = false;
                 isItZoomedIn = true;
+                Debug.Log("Reached here");
+                Debug.Log(isItZoomedIn);
             }
 
         }
         else if (isItZoomedIn && isItDoubleClick)
         {
-            _cam.transform.position = Vector3.Lerp(transform.position, _originalPosition, lerpSpeed * Time.deltaTime);
-            isItZoomedOut = false;
-            _cam.transform.eulerAngles = resetRotation;
+            ResetCameraParameters(cameraZoomOutDistance);
 
-            if (Vector3.Distance(_cam.transform.position, _originalPosition) < 0.05f)
+            isItZoomedOut = false;
+
+
+
+            if (Vector3.Distance(_cam.transform.position, _originalPosition) < 0.1f)
             {
+
                 _cam.transform.position = _originalPosition;
-                
+
                 isItZoomedOut = true;
+                isItZoomedIn = false;
                 isItDoubleClick = false;
             }
 
         }
 
-    }   
+    }
+
+    private void ResetCameraParameters(Vector3 cameraZoomOutDistance)
+    {
+        _cam.transform.position = new Vector3(0, transform.position.y, transform.position.z);
+        _cam.transform.eulerAngles = resetRotation;
+        _cam.transform.position = Vector3.Lerp(transform.position, cameraZoomOutDistance, zoomOutSpeed * Time.deltaTime);
+    }
+
     void CameraRotation()
     {
         Vector3 mousePos = _cam.ScreenToViewportPoint(Input.mousePosition);
         if(Input.GetMouseButton(0))
         {
-            if(mousePos.x < 0.3f && isItZoomedIn && _cam.transform.position.x > - 0.45f)
+            if(mousePos.x < 0.1f && isItZoomedIn && _cam.transform.position.x > - 0.45f)
             {
                 _cam.transform.RotateAround(Model.transform.position, Vector3.up, 20 * Time.deltaTime);
             }
-            else if(mousePos.x > 0.6f && isItZoomedIn && _cam.transform.position.x < 0.45f)
+            else if(mousePos.x > 0.85f && isItZoomedIn && _cam.transform.position.x < 0.45f)
             {
                 _cam.transform.RotateAround(Model.transform.position, Vector3.up, -20 * Time.deltaTime);
             }
         }
        
+    }
+    public bool IsItZoomed()
+    {
+        return isItZoomedIn;
     }
     
 
