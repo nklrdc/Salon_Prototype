@@ -631,7 +631,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 384473911}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1427384798}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: SpawnTool_1
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 5746389126115478758, guid: 8bf1e54d59e5a064085c58b237a58b89, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &384473911
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -675,6 +687,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: ab2091b0494154a46b0dac02868aaa36, type: 3}
   m_PrefabInstance: {fileID: 2064714713}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &528161086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 528161087}
+  m_Layer: 0
+  m_Name: SpawnLocation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &528161087
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 528161086}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.163, z: -2.819}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &701547365
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,7 +979,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 711368604}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1427384798}
+        m_TargetAssemblyTypeName: GameControl, Assembly-CSharp
+        m_MethodName: SpawnTool_1
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 7112484650014702348, guid: 7ba50da8c78b26142b8db7561c20147c, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &711368604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1826,6 +1881,53 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1427384797
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1427384799}
+  - component: {fileID: 1427384798}
+  m_Layer: 0
+  m_Name: GameControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1427384798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427384797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95d51f1459a9e544ba15debdc89752a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Tool_1: {fileID: 7112484650014702348, guid: 7ba50da8c78b26142b8db7561c20147c, type: 3}
+  Tool_2: {fileID: 0}
+  SpawnLocation: {fileID: 528161087}
+--- !u!4 &1427384799
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427384797}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1662555287
 GameObject:
