@@ -9,7 +9,22 @@ ModelImporter:
   - first:
       74: -3045435180176150866
     second: AvatarCurrentMotion
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hair_Transparency_0_Pbr
+    second: {fileID: 2100000, guid: 9de7769775984eb47ad2e4a3f3b330e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hair_Transparency_1_Pbr
+    second: {fileID: 2100000, guid: 9f1aca9507168684e88b7340102b7a9a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hair_Transparency_Pbr
+    second: {fileID: 2100000, guid: 5d509a99367a9fc4abe6022829146d8f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

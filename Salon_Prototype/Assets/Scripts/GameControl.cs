@@ -6,6 +6,8 @@ public class GameControl : MonoBehaviour
 {
     public GameObject Tool_1;
     public GameObject Tool_2;
+    public GameObject Tool_3;
+    public GameObject Tool_4;
     public Transform SpawnLocation;
 
     private GameObject _currentTool;

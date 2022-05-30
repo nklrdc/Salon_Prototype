@@ -16,6 +16,7 @@ public class CameraControl : MonoBehaviour
     private Vector3 _originalPosition;
     private Vector3 _destinationPosition;
 
+
     private const float _doubleClick = 0.2f;
 
     private float lastClickTime;
