@@ -51,7 +51,7 @@ public class CameraControl : MonoBehaviour
         DoubleClickDetection();
 
         CameraZoom();
-        CameraRotation();
+        //CameraRotation();
         
        
     }
@@ -127,13 +127,13 @@ public class CameraControl : MonoBehaviour
     void CameraRotation()
     {
         Vector3 mousePos = _cam.ScreenToViewportPoint(Input.mousePosition);
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButton(1))
         {
             if(mousePos.x < 0.1f && isItZoomedIn && _cam.transform.position.x > - 0.45f)
             {
                 _cam.transform.RotateAround(Model.transform.position, Vector3.up, 20 * Time.deltaTime);
             }
-            else if(mousePos.x > 0.85f && isItZoomedIn && _cam.transform.position.x < 0.45f)
+            else if(mousePos.x > 0.9f && isItZoomedIn && _cam.transform.position.x < 0.45f)
             {
                 _cam.transform.RotateAround(Model.transform.position, Vector3.up, -20 * Time.deltaTime);
             }

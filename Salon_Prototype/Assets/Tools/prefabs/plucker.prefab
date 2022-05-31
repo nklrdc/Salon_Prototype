@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 4410820983996904530}
   - component: {fileID: -5754084199372789682}
   - component: {fileID: -7511558181221131132}
+  - component: {fileID: 7238419458333380637}
+  - component: {fileID: 2922228698477322191}
   m_Layer: 0
   m_Name: plucker
-  m_TagString: Untagged
+  m_TagString: Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83,3 +85,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &7238419458333380637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164353756172620823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f68737e5d8c24d4db56cfac8b8d0d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ToolTarget: 
+  Brush: {fileID: 0}
+  Cam: {fileID: 0}
+  brushSize: 0.2
+--- !u!65 &2922228698477322191
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 164353756172620823}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.019216206, y: 0.16645262, z: 0.03198414}
+  m_Center: {x: -0.002157817, y: -0.079808116, z: -0.000000010702424}

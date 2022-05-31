@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 2580214771610312769}
   - component: {fileID: -5754084199372789682}
   - component: {fileID: -7511558181221131132}
+  - component: {fileID: -4476230563254942675}
+  - component: {fileID: 1259678353551752352}
   m_Layer: 0
   m_Name: eyeliner
-  m_TagString: Untagged
+  m_TagString: Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7428556133451674362}
   m_LocalRotation: {x: -0.32908487, y: -0.3501575, z: 0.13293196, w: 0.8668461}
-  m_LocalPosition: {x: -0, y: 0.3327021, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 2.6087, y: 2.6087, z: 2.6087}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -85,3 +87,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-4476230563254942675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7428556133451674362}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f68737e5d8c24d4db56cfac8b8d0d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ToolTarget: 
+  Brush: {fileID: 0}
+  Cam: {fileID: 0}
+  brushSize: 0.2
+--- !u!65 &1259678353551752352
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7428556133451674362}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.00243668, y: 0.0024366796, z: 0.030455645}
+  m_Center: {x: -7.1151196e-10, y: -4.5264134e-10, z: -0.01518813}

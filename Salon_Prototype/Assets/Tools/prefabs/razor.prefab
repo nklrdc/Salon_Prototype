@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 4535080174652868783}
   - component: {fileID: -5754084199372789682}
   - component: {fileID: -7511558181221131132}
+  - component: {fileID: 3678267131075450991}
+  - component: {fileID: 5543350276588525280}
   m_Layer: 0
   m_Name: razor
-  m_TagString: Untagged
+  m_TagString: Tool
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,3 +86,32 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3678267131075450991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6491804214132026816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f68737e5d8c24d4db56cfac8b8d0d75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ToolTarget: 
+  Brush: {fileID: 0}
+  Cam: {fileID: 0}
+  brushSize: 0.2
+--- !u!65 &5543350276588525280
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6491804214132026816}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 0.017669061, y: 0.009255891, z: 0.0072275344}
+  m_Center: {x: -0.008237064, y: 0.000003807676, z: 0.002756895}
